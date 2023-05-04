@@ -31,3 +31,4 @@ console.log("Valor cambiado: ", age); // 40
 // Uso de const
 const PI_ejemplo = 3.1416;
 PI_ejemplo = 3.14; // Error
+console.log(PI_ejemplo); // 3.1416
