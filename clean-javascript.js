@@ -1,34 +1,11 @@
-// Anterior a ES6
-var name = "Javier";
+// No recomendado
+const yyyymmdstr = moment().format("YYYY/MM/DD");
+let arrayNames = ["Diego", "Karen", "Oscar"];
+getUserInfo();
+getClientData();
+getCustomerRecord();
 
-// JavaScript Moderno
-let name = "Juan";
-const PI = 3.1416;
-
-// Uso de var
-var age = 20;
-
-{
-  console.log("Valor dentro del bloque: ", age); // 20
-  var age = 30;
-}
-console.log("Valor fuera del bloque: ", age); // 30
-age = 40;
-console.log("Valor cambiado: ", age); // 40
-
-// Uso de let
-let age = 20;
-
-{
-  console.log("Valor dentro del bloque: ", age); // Error
-  let age = 30;
-}
-
-console.log("Valor fuera del bloque: ", age); // 20
-age = 40;
-console.log("Valor cambiado: ", age); // 40
-
-// Uso de const
-const PI_ejemplo = 3.1416;
-PI_ejemplo = 3.14; // Error
-console.log(PI_ejemplo); // 3.1416
+// Recomendado
+const currentDate = moment().format("YYYY/MM/DD");
+let nameList = ["Diego", "Karen", "Oscar"];
+getUser();
