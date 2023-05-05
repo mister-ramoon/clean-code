@@ -1,59 +1,59 @@
-/*Arrays*/
+// Ámbito global
+let greeting = "Hello World";
 
-// No recomendado
-const user = ["Juan", "Mariana", "Carmen"];
+function greet() {
+  console.log(greeting);
+}
 
-// Regular
-const userList = ["Juan", "Mariana", "Carmen"];
+greet(); // Hello World
 
-// Bueno
-const users = ["Juan", "Mariana", "Carmen"];
+// Ámbito local o de función
+function greet() {
+  let greeting = "Hello World";
+  console.log("Saludo desde la función", greeting);
+}
 
-// Excelente
-const usersNames = ["Juan", "Mariana", "Carmen"];
+greet(); // Hello World
+console.log(greeting);
 
-/*Booleanos*/
+// Ámbito de bloque
+{
+  let greeting = "Hello World";
+  var lang = "English";
 
-// No recomendado
-const valid = true;
-const read = false;
-const color = true;
+  console.log(greeting); // Hello World
+}
 
-// Recomendado
-const isValid = true;
-const canRead = false;
-const hasColor = true;
+console.log(lang); // English
+console.log(greeting); // ReferenceError: greeting is not defined
 
-/*Números*/
+// Ámbito estático o lexico
+const age = 20;
 
-// No recomendado
-const users = 15;
+function printAge() {
+  console.log(age);
+}
 
-// Recomendado
-const maxUsers = 20;
-const minUsers = 10;
-const totalUsers = 15;
+function mainApp() {
+  const age = 30;
+  printAge();
+}
 
-/*Funciones*/
+mainApp(); // 20
 
-// No recomendado
-createUserIfNotExists();
-updateUserIfNotExists();
-sendEmailIfIsValid();
+// Hoisting
+greet(); // Hello World
 
-// Recomendado
-createUser();
-updateUser();
-sendEmail();
+function greet() {
+  let greeting = "Hello World";
+  console.log(greeting);
+}
 
-/*Clases*/
+var greed = "Hello";
 
-// No recomendado
-class Data {}
-class Manager {}
-class Infor {}
-
-// Recomendado
-class User {}
-class UserAccount {}
-class UserInformation {}
+(function () {
+  var greed;
+  console.log(greed);
+  var greed = "Hi";
+  console.log(greed);
+})();
